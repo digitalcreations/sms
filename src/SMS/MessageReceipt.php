@@ -6,11 +6,13 @@ class MessageReceipt implements MessageReceiptInterface {
 
     private $messageIdentifier;
     private $enqueued;
+    private $content;
 
-    function __construct($messageIdentifier, $enqueued)
+    function __construct($messageIdentifier, $enqueued, $content = null)
     {
         $this->messageIdentifier = $messageIdentifier;
         $this->enqueued = $enqueued;
+        $this->content = $content;
     }
 
     /**
@@ -27,5 +29,10 @@ class MessageReceipt implements MessageReceiptInterface {
     function wasEnqueued()
     {
         return $this->enqueued;
+    }
+
+    function getResponseContent()
+    {
+        return $this->content;
     }
 }
