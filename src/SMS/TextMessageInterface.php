@@ -27,4 +27,9 @@ interface TextMessageInterface {
      * @return int|void Price in lowest monetary unit.
      */
     function getTariff();
+
+    /**
+     * @return int|null Number of seconds this message should live.
+     */
+    function getTTL();
 }

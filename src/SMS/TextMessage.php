@@ -14,6 +14,7 @@ class TextMessage implements TextMessageInterface {
     private $sender;
     private $shortCode = null;
     private $tariff = null;
+    private $ttl = null;
 
     /**
      * @return string Message text. Messages above 160 characters will be split. Messages above 804 characters are truncated.
@@ -93,5 +94,17 @@ class TextMessage implements TextMessageInterface {
     public function setTariff($tariff)
     {
         $this->tariff = $tariff;
+    }
+
+    public function setTTL($ttl) {
+        $this->ttl = $ttl;
+    }
+
+    /**
+     * @return int|null Number of seconds this message should live.
+     */
+    public function getTTL()
+    {
+        return $this->ttl;
     }
 }
