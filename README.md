@@ -5,3 +5,4 @@ This library contains interfaces for implementing interchangeable SMS providers.
 Current list of supported providers (very short list):
 
 - [PSWinCom](https://github.com/digitalcreations/sms_pswincom)
+- [Link Mobility Common Platform](https://github.com/digitalcreations/sms_link)

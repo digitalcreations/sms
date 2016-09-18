@@ -7,6 +7,7 @@ interface DeliveryReportInterface {
     function isFinalDeliveryReport();
     function isError();
     function isDelivered();
+    function isBilled();
 
     /**
      * @return int See DeliveryState

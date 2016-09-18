@@ -32,4 +32,9 @@ interface TextMessageInterface {
      * @return int|null Number of seconds this message should live.
      */
     function getTTL();
+
+    /**
+     * @return bool Should this message be silently billed without sending a text message to the user?
+     */
+    function getSilentBilling();
 }

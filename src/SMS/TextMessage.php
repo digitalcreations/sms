@@ -15,6 +15,7 @@ class TextMessage implements TextMessageInterface {
     private $shortCode = null;
     private $tariff = null;
     private $ttl = null;
+    private $silentBilling = false;
 
     /**
      * @return string Message text. Messages above 160 characters will be split. Messages above 804 characters are truncated.
@@ -106,5 +107,20 @@ class TextMessage implements TextMessageInterface {
     public function getTTL()
     {
         return $this->ttl;
+    }
+
+    /**
+     * @param bool $silentBilling Should this message be silently billed without sending a text message to the user?
+     */
+   public function setSilentBilling($silentBilling) {
+        $this->silentBilling = $silentBilling;
+    }
+
+    /**
+     * @return bool Should this message be silently billed without sending a text message to the user?
+     */
+    public function getSilentBilling()
+    {
+        return $this->silentBilling;
     }
 }

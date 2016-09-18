@@ -14,6 +14,10 @@
             "name": "Vegard Andreas Larsen",
             "homepage": "http://vega.rd.no",
             "role": "Developer"
+        },
+        {
+            "name": "Francis Rath",
+            "role": "Developer"
         }
     ],
     "support": {
