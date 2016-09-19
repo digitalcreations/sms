@@ -12,6 +12,7 @@ class TextMessage implements TextMessageInterface {
     private $text;
     private $receiver;
     private $sender;
+    private $senderTypeOfNumber = \DC\SMS\TypeOfNumber::ALPHANUMERIC;
     private $shortCode = null;
     private $tariff = null;
     private $ttl = null;
@@ -46,7 +47,15 @@ class TextMessage implements TextMessageInterface {
      */
     function getSenderTypeOfNumber()
     {
-        return \DC\SMS\TypeOfNumber::ALPHANUMERIC;
+        return $this->senderTypeOfNumber;
+    }
+
+    /**
+     * @param \DC\SMS\TypeOfNumber $ton Type of number for sender number
+     */
+    function setSenderTypeOfNumber($ton)
+    {
+        $this->senderTypeOfNumber = $ton;
     }
 
     /**
@@ -58,11 +67,14 @@ class TextMessage implements TextMessageInterface {
     }
 
     /**
-     * @param null $shortCode
+     * @param string|null $shortCode
      */
     public function setShortCode($shortCode)
     {
         $this->shortCode = $shortCode;
+        if ($shortCode != null) {
+            $this->senderTypeOfNumber = \DC\SMS\TypeOfNumber::SHORTNUMBER;
+        }
     }
 
     /**
