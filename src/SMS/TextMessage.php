@@ -15,6 +15,7 @@ class TextMessage implements TextMessageInterface {
     private $senderTypeOfNumber = \DC\SMS\TypeOfNumber::ALPHANUMERIC;
     private $shortCode = null;
     private $tariff = null;
+    private $productDescription = null;
     private $ttl = null;
     private $silentBilling = false;
 
@@ -110,7 +111,23 @@ class TextMessage implements TextMessageInterface {
     }
 
     /**
-     * @param null $tariff
+     * @return string|null Product description (required for premium messages)
+     */
+    public function getProductDescription()
+    {
+        return $this->productDescription;
+    }
+
+    /**
+     * @param string|null $tariff Product description (required for premium messages)
+     */
+    public function setProductDescription($description)
+    {
+        $this->productDescription = $description;
+    }
+
+    /**
+     * @param int|null $tariff Price in lowest monetary unit.
      */
     public function setTariff($tariff)
     {

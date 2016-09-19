@@ -34,6 +34,11 @@ interface TextMessageInterface {
     function getTariff();
 
     /**
+     * @return string|null Product description (required for premium messages)
+     */
+    function getProductDescription();
+
+    /**
      * @return int|null Number of seconds this message should live.
      */
     function getTTL();
