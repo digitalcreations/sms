@@ -19,6 +19,11 @@ interface TextMessageInterface {
     function getSender();
 
     /**
+     * @return \DC\SMS\TypeOfNumber Type of number for sender number
+     */
+    function getSenderTypeOfNumber();
+
+    /**
      * @return string|null
      */
     function getShortCode();

@@ -42,6 +42,14 @@ class TextMessage implements TextMessageInterface {
     }
 
     /**
+     * @return \DC\SMS\TypeOfNumber Type of number for sender number
+     */
+    function getSenderTypeOfNumber()
+    {
+        return \DC\SMS\TypeOfNumber::ALPHANUMERIC;
+    }
+
+    /**
      * @return string|null
      */
     function getShortCode()
