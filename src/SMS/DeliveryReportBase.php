@@ -4,6 +4,10 @@ namespace DC\SMS;
 
 abstract class DeliveryReportBase implements DeliveryReportInterface
 {
+    function getRawReport()
+    {
+        return '';
+    }
 
     function isError()
     {
