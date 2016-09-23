@@ -18,6 +18,7 @@ class TextMessage implements TextMessageInterface {
     private $productDescription = null;
     private $ttl = null;
     private $silentBilling = false;
+    private $referenceId = '';
 
     /**
      * @return string Message text. Messages above 160 characters will be split. Messages above 804 characters are truncated.
@@ -159,5 +160,13 @@ class TextMessage implements TextMessageInterface {
     public function getSilentBilling()
     {
         return $this->silentBilling;
+    }
+
+    public function setReferenceId($value) {
+        $this->referenceId = $value;
+    }
+
+    public function getReferenceId() {
+        return $this->referenceId;
     }
 }

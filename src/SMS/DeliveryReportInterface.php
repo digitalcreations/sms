@@ -9,6 +9,7 @@ interface DeliveryReportInterface {
     function isDelivered();
     function isBilled();
     function getRawReport();
+    function getReferenceId();
 
     /**
      * @return int See DeliveryState
