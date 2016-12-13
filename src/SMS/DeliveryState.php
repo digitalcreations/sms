@@ -29,4 +29,7 @@ abstract class DeliveryState
 
     const UnknownNetwork = 19;
     const UnknownError = 20;
+
+    const OperatorError = 21;
+    const ProviderError = 22;
 }
